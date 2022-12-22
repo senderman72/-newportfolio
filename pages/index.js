@@ -1,5 +1,12 @@
 import Head from "next/head";
 import { BsFillMoonStarsFill } from "react-icons/bs";
+import {
+  AiFillTwitterCircle,
+  AiFillGithub,
+  AiFillLinkedin,
+} from "react-icons/ai";
+import Image from "next/image";
+import deved from "../public/dev-ed-wave.png";
 
 export default function Home() {
   return (
@@ -12,7 +19,7 @@ export default function Home() {
       <main className="bg-white px-10">
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between">
-            <h1 className="text-xl">DeployedbyErik</h1>
+            <h1 className="text-xl font-burtons">DeployedbyErik</h1>
             <ul className="flex items-center">
               <li>
                 <BsFillMoonStarsFill className="cursor-ponter text-2xl" />
@@ -27,6 +34,47 @@ export default function Home() {
               </li>
             </ul>
           </nav>
+          <div className="text-center p-10 ">
+            <h2 className="text-5xl py-2 text-teal-600 font-medium">
+              Erik Persson
+            </h2>
+            <h3 className="text-2xl py-2">Developer</h3>
+
+            <p className="text-md py-5 leading-8 text-gray-800">
+              Hello👋🏽 Im Erik Persson and im a developer. Join me down below and
+              let´s get cracking!
+            </p>
+          </div>
+          <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
+            <AiFillGithub />
+            <AiFillLinkedin />
+            <AiFillTwitterCircle />
+          </div>
+          <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden">
+            <Image src={deved} alt="avatar" layout="fill" objectFit="cover" />
+          </div>
+        </section>
+        <section>
+          <div>
+            <h3 className="text-3xl py-1">My Journey</h3>
+            <p className="text-md py-5 leading-8 text-gray-800">
+              The last year i’ve been developing skills in the MERN stack where
+              i started from the simple and later been digging deeper in the
+              djungle of javascript with frameworks like React for example. I’ve
+              been learning these skills in a coding bootcamp based in Stockholm
+              sweden but i live in Malmö close to Copenhagen. The projects that
+              i’m most proud of is my{" "}
+              <span className="text-teal-500">klarna-checkout</span> where i
+              integrated klarnas api with my simple webshop. I’ve also built a
+              kanban Board and a{" "}
+              <span className="text-teal-500">slack-clone</span> and a clone of{" "}
+              <span className="text-teal-500">spotify</span>. Since i grew up
+              learning and being curios has been a big part of my life and a
+              also like to work with people in a team to reach the same goal.
+              The idea of simplify the future with software and always evolving
+              in the role as a software developer is what drives me forward.
+            </p>
+          </div>
         </section>
       </main>
     </div>
