@@ -7,6 +7,8 @@ import {
 } from "react-icons/ai";
 import Image from "next/image";
 import deved from "../public/dev-ed-wave.png";
+import design from "../public/design.png";
+import code from "../public/code.png";
 
 export default function Home() {
   return (
@@ -74,6 +76,50 @@ export default function Home() {
               The idea of simplify the future with software and always evolving
               in the role as a software developer is what drives me forward.
             </p>
+            <p className="text-lg py-5 leading-8 text-gray-800">
+              i´m looking for junior developer job to keep evolving and grow my
+              skills and at the same time bring value!
+            </p>
+          </div>
+          <div>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+              <Image
+                src={design}
+                width={150}
+                height={150}
+                alt="design picture"
+              />
+              <h3 className="text-lg font-medium pt-8 pb-2">
+                Beautiful Styling
+              </h3>
+              <p className="py-2">
+                Creating elegant stylings with different type of css
+              </p>
+              <h4 className="py-4 text-teal-600">Styling tools i use</h4>
+              <p className="text-gray-800 py-1">Css</p>
+              <p className="text-gray-800 py-1">Scss/sass</p>
+              <p className="text-gray-800 py-1">Tailwindcss</p>
+              <p className="text-gray-800 py-1">Material UI</p>
+            </div>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+              <Image src={code} width={150} height={150} alt="design picture" />
+              <h3 className="text-lg font-medium pt-8 pb-2">
+                Beautiful Styling
+              </h3>
+              <p className="py-2">
+                Creating elegant stylings with different type of css
+              </p>
+              <h4 className="py-4 text-teal-600">Styling tools i use</h4>
+              <p className="text-gray-800 py-1">Css</p>
+              <p className="text-gray-800 py-1">Scss/sass</p>
+              <p className="text-gray-800 py-1">Tailwindcss</p>
+              <p className="text-gray-800 py-1">Material UI</p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div>
+            <h3 className="text-3xl py-1">Portfolio</h3>
           </div>
         </section>
       </main>
