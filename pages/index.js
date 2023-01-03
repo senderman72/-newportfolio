@@ -5,12 +5,24 @@ import {
   AiFillGithub,
   AiFillLinkedin,
 } from "react-icons/ai";
+import React, { useState } from "react";
+import { Document, Page, pdfjs } from "react-pdf";
 import Image from "next/image";
 import deved from "../public/dev-ed-wave.png";
 import design from "../public/design.png";
 import code from "../public/code.png";
 
 export default function Home() {
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  function onDocumentLoadSucess({ numPages }) {
+    setNumPages(numPages);
+    setPageNumber(1);
+  }
+
+  pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
   return (
     <div>
       <Head>
@@ -104,43 +116,31 @@ export default function Home() {
             <div className="text-center shadow-lg p-10 rounded-xl my-10">
               <Image src={code} width={150} height={150} alt="design picture" />
               <h3 className="text-lg font-medium pt-8 pb-2">
-                Beautiful Styling
+                Languages and frameworks
               </h3>
-              <p className="py-2">
-                Creating elegant stylings with different type of css
-              </p>
-              <h4 className="py-4 text-teal-600">Styling tools i use</h4>
-              <p className="text-gray-800 py-1">Css</p>
-              <p className="text-gray-800 py-1">Scss/sass</p>
-              <p className="text-gray-800 py-1">Tailwindcss</p>
-              <p className="text-gray-800 py-1">Material UI</p>
+              <p className="py-2">building scalable projects with clean code</p>
+              <h4 className="py-4 text-teal-600">
+                coding languages and frameworks i use
+              </h4>
+              <p className="text-gray-800 py-1">Javascript</p>
+              <p className="text-gray-800 py-1">React with Redux</p>
+              <h4 className="py-4 text-teal-600">currently learning</h4>
+              <p className="text-gray-800 py-1">Next</p>
+              <p className="text-gray-800 py-1">Typescript</p>
             </div>
           </div>
         </section>
         <section>
           <div>
-            <h3 className="text-3xl py-1">Portfolio</h3>
-            <p className="text-md py-5 leading-8 text-gray-800">
-              The last year i’ve been developing skills in the MERN stack where
-              i started from the simple and later been digging deeper in the
-              djungle of javascript with frameworks like React for example. I’ve
-              been learning these skills in a coding bootcamp based in Stockholm
-              sweden but i live in Malmö close to Copenhagen. The projects that
-              i’m most proud of is my{" "}
-              <span className="text-teal-500">klarna-checkout</span> where i
-              integrated klarnas api with my simple webshop. I’ve also built a
-              kanban Board and a{" "}
-              <span className="text-teal-500">slack-clone</span> and a clone of{" "}
-              <span className="text-teal-500">spotify</span>. Since i grew up
-              learning and being curios has been a big part of my life and a
-              also like to work with people in a team to reach the same goal.
-              The idea of simplify the future with software and always evolving
-              in the role as a software developer is what drives me forward.
-            </p>
-            <p className="text-lg py-5 leading-8 text-gray-800">
-              i´m looking for junior developer job to keep evolving and grow my
-              skills and at the same time bring value!
-            </p>
+            <h3 className="text-3xl py-1 md:flex">Curriculum vitae</h3>
+            <div className="shadow-lg p-10 rounded-xl ">
+              <Document file="/cv.pdf" onLoadSuccess={onDocumentLoadSucess}>
+                <Page height={200} pageNumber={pageNumber} />
+              </Document>
+              <p>
+                Page {pageNumber} of {numPages}
+              </p>
+            </div>
           </div>
         </section>
       </main>
