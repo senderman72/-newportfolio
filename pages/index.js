@@ -13,6 +13,8 @@ import code from "../public/code.png";
 import cta from "../public/cta.png";
 import spotify from "../public/spotify.jpg";
 import slack from "../public/slack.jpg";
+import weather from "../public/weather.jpg";
+import kanban from "../public/kanban.jpg";
 
 export default function Home() {
   return (
@@ -175,13 +177,63 @@ export default function Home() {
                 </a>
               </div>
             </div>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+              <Image
+                src={weather}
+                width={170}
+                height={170}
+                alt="weather picture"
+              />
+              <h3 className="text-lg font-medium pt-8 pb-2">Weather app</h3>
+              <p className="py-2">
+                created a weather forecast connected to live-weather API. Search
+                for any city in the world to see what the weather looks like.
+              </p>
+              <h4 className="py-4 text-teal-600">tools involved</h4>
+              <p className="text-gray-800 py-1">Javascript</p>
+              <p className="text-gray-800 py-1">Html5</p>
+              <p className="text-gray-800 py-1">Fetch</p>
+              <p className="text-gray-800 py-1">Css</p>
+              <p className="text-gray-800 py-1">Git</p>
+              <div className="">
+                <a
+                  className="text-gray-800 py-1 text-5xl"
+                  href="https://github.com/senderman72/weather-app"
+                >
+                  <AiFillGithub />
+                </a>
+              </div>
+            </div>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+              <Image src={kanban} width={150} height={150} alt="kanban" />
+              <h3 className="text-lg font-medium pt-8 pb-2">Kanban</h3>
+              <p className="py-2">
+                created a responsive drag and drog Kanban-board with. The idea
+                is that you can work in an agile scrum team with help from the
+                board.
+              </p>
+              <h4 className="py-4 text-teal-600">tools involved</h4>
+              <p className="text-gray-800 py-1">Javascript</p>
+              <p className="text-gray-800 py-1">React</p>
+              <p className="text-gray-800 py-1">Redux</p>
+              <p className="text-gray-800 py-1">Scss</p>
+              <p className="text-gray-800 py-1">Git</p>
+              <div className="">
+                <a
+                  className="text-gray-800 py-1 text-5xl"
+                  href="https://github.com/senderman72/kanban-board"
+                >
+                  <AiFillGithub />
+                </a>
+              </div>
+            </div>
           </div>
         </section>
         <section>
-          <div className="lg:flex gap-10 justify-center ">
+          <div className="lg:flex gap-10 justify-center bg-gray-200 rounded-xl">
             <div>
               <h3 className="text-3xl py-5 md:flex">Get in touch</h3>
-              <Image src={cta} alt="contact details" />
+              <Image src={cta} alt="contact details" className="rounded-xl" />
             </div>
           </div>
         </section>
