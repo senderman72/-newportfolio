@@ -5,24 +5,16 @@ import {
   AiFillGithub,
   AiFillLinkedin,
 } from "react-icons/ai";
-import React, { useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
+
 import Image from "next/image";
 import deved from "../public/dev-ed-wave.png";
 import design from "../public/design.png";
 import code from "../public/code.png";
+import cta from "../public/cta.png";
+import spotify from "../public/spotify.jpg";
+import slack from "../public/slack.jpg";
 
 export default function Home() {
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-
-  function onDocumentLoadSucess({ numPages }) {
-    setNumPages(numPages);
-    setPageNumber(1);
-  }
-
-  pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-
   return (
     <div>
       <Head>
@@ -131,15 +123,65 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div>
-            <h3 className="text-3xl py-1 md:flex">Curriculum vitae</h3>
-            <div className="shadow-lg p-10 rounded-xl ">
-              <Document file="/cv.pdf" onLoadSuccess={onDocumentLoadSucess}>
-                <Page height={200} pageNumber={pageNumber} />
-              </Document>
-              <p>
-                Page {pageNumber} of {numPages}
+          <h3 className="text-3xl py-1">Projects</h3>
+          <div className="lg:flex gap-10">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+              <Image
+                src={spotify}
+                width={150}
+                height={150}
+                alt="spotify-logo"
+              />
+              <h3 className="text-lg font-medium pt-8 pb-2">Spotify-clone</h3>
+              <p className="py-2">
+                created a clone of spotify using Spotifys API. sign in to
+                spotify, play your personal playlist with pause and skip
+                function.
               </p>
+              <h4 className="py-4 text-teal-600">tools involved</h4>
+              <p className="text-gray-800 py-1">Javascript</p>
+              <p className="text-gray-800 py-1">React</p>
+              <p className="text-gray-800 py-1">Redux</p>
+              <p className="text-gray-800 py-1">material UI</p>
+              <p className="text-gray-800 py-1">Git</p>
+              <div className="">
+                <a
+                  className="text-gray-800 py-1 text-5xl"
+                  href="https://github.com/senderman72/spotify-clone"
+                >
+                  <AiFillGithub />
+                </a>
+              </div>
+            </div>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10">
+              <Image src={slack} width={150} height={150} alt="slack-logo" />
+              <h3 className="text-lg font-medium pt-8 pb-2">Slack-clone</h3>
+              <p className="py-2">
+                created a clone of slack using Firebase for live chatting. sign
+                in to google account, chat in two groupchats live.
+              </p>
+              <h4 className="py-4 text-teal-600">tools involved</h4>
+              <p className="text-gray-800 py-1">Javascript</p>
+              <p className="text-gray-800 py-1">React</p>
+              <p className="text-gray-800 py-1">Firebase</p>
+              <p className="text-gray-800 py-1">Css</p>
+              <p className="text-gray-800 py-1">Git</p>
+              <div className="">
+                <a
+                  className="text-gray-800 py-1 text-5xl"
+                  href="https://github.com/senderman72/slack-clone"
+                >
+                  <AiFillGithub />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="lg:flex gap-10 justify-center ">
+            <div>
+              <h3 className="text-3xl py-5 md:flex">Get in touch</h3>
+              <Image src={cta} alt="contact details" />
             </div>
           </div>
         </section>
