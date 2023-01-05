@@ -120,6 +120,10 @@ export default function Home() {
               </h4>
               <p className="text-gray-800 py-1">Javascript</p>
               <p className="text-gray-800 py-1">React with Redux</p>
+              <p className="text-gray-800 py-1">Node</p>
+              <p className="text-gray-800 py-1">Express</p>
+              <p className="text-gray-800 py-1">MongoDB</p>
+              <p className="text-gray-800 py-1">Firebase</p>
               <h4 className="py-4 text-teal-600">currently learning</h4>
               <p className="text-gray-800 py-1">Next</p>
               <p className="text-gray-800 py-1">Typescript</p>
